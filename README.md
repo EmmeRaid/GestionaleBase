@@ -1,25 +1,40 @@
-# 🧾 Gestionale Clienti - Progetto in C#
+# GestionaleBase
 
-## 📌 Descrizione del Progetto
-
-Questo progetto è un **gestionale clienti** sviluppato in **C#** con interfaccia **a riga di comando (CLI)**.  
-È pensato per esercitarsi con la **programmazione orientata agli oggetti (OOP)**, la **gestione dell’input/output da terminale**, e la **strutturazione di un'applicazione modulare**.
-
-> 🎯 **Obiettivo**: creare una base solida per un gestionale che permetta di **aggiungere, modificare, eliminare e visualizzare** clienti.
+**GestionaleBase** è un'applicazione console scritta in C# che consente la gestione di una lista di utenti.  
+Permette di aggiungere, modificare, eliminare e visualizzare utenti, con la possibilità di salvare e caricare i dati da un file JSON.
 
 ---
 
-## ✨ Funzionalità Implementate
+## ✨ Caratteristiche principali
 
-- [x] Menù interattivo da terminale
-- [x] Aggiunta nuovi clienti
-- [x] Visualizzazione elenco clienti
-- [ ] Modifica dati cliente *(in sviluppo)*
-- [ ] Eliminazione cliente *(in sviluppo)*
+- ➕ Aggiunta di nuovi utenti con ID, nome ed email.
+- ✏️ Modifica e eliminazione di utenti esistenti.
+- 📋 Visualizzazione della lista utenti in formato tabellare.
+- 💾 Salvataggio e caricamento dei dati da un file JSON (`saves/Salvati.json`).
 
 ---
 
-## 📷 Esempi Interfaccia (CLI)
+## 🛠️ Installazione
 
-### Menu Principale
+1. Clona il repository:
 
+   ```bash
+   git clone https://github.com/EmmeRaid/GestionaleBase.git
+
+
+=== GESTIONALE CLIENTI ===
+
+1. Aggiungi utente
+2. Elimina utente
+3. Modifica utente
+4. Visualizza utenti
+5. Stampa utente
+6. Esci
+
+
+📋 Lista clienti:
+
+🆔 ID   👤 Nome               📧 Email
+-----------------------------------------------
+1      Mario Rossi           mario@example.com
+2      Luigi Bianchi         luigi@example.com

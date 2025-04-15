@@ -9,6 +9,24 @@ namespace Gestionale.Services
 {
     public class UtenteService
     {
+
+        public void StampaLogo()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            Console.WriteLine(@"
+   ____           _        _             _       
+  / ___| ___   __| | ___  | | ___   __ _(_)_ __  
+ | |  _ / _ \ / _` |/ _ \ | |/ _ \ / _` | | '_ \ 
+ | |_| | (_) | (_| |  __/ | | (_) | (_| | | | | |
+  \____|\___/ \__,_|\___| |_|\___/ \__, |_|_| |_|
+                                   |___/         
+
+            ╔═══════════════════════════╗
+            ║       By. EmmeRaid        ║
+            ╚═══════════════════════════╝
+");
+        }
         //INIZIALIZZAZIONE DELLA LISTA, IN MODO CHE POSSA ESSERE UTILIZZATA E RIEMPITA
         private List<Utente> utenti = new List<Utente>();
 

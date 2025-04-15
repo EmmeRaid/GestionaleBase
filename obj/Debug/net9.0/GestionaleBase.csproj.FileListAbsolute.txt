@@ -57,3 +57,4 @@ C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\Ges
 C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\obj\Debug\net9.0\GestionaleBase.pdb
 C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\obj\Debug\net9.0\GestionaleBase.genruntimeconfig.cache
 C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\obj\Debug\net9.0\ref\GestionaleBase.dll
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\obj\Debug\net9.0\GestionaleBase.sourcelink.json

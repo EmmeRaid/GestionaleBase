@@ -14,7 +14,8 @@ class Program
         bool lettura = false;
         int id = 0;
         int Selezione_funzione = 0;
-
+        
+        utenteService.StampaLogo();
         utenteService.aggiorna();
         //LOOP DEL PROGRAMA CHE VA A FINIRE UNA VOLTA CHE L'AMMINISTRATORE INSERISCE IL NUMERO "6"
         while (Selezione_funzione != 6)
