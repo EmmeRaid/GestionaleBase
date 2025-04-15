@@ -28,6 +28,8 @@ namespace Gestionale.Services
             string? email = Console.ReadLine();
 
             var nuovo = new Utente { Id = id, Nome = nome, Email = email };
+
+            //CONTROLLO SE L'UTENTE è GIA STATO SALVATO CON LO STESSO ID
             if (TrovaUtente(nuovo.Id, cambio, elimino, lettura) == 1)
             {
                 Console.WriteLine("❌Mi dispiace l'utente inserito non può essere salvato, l'ID selezionato è gia esistente.");
@@ -46,6 +48,11 @@ namespace Gestionale.Services
 
         }
 
+
+        /*
+        FUNZIONE PER AGGIORNARE ALL'AVVIO DEL PROGRAMMA LA LISTA CON IL FILE JSON 
+        CHE SUCCESSIVAMENTE VERRà AGGIORNATO CON ALTRI DATI DURANTE L'ESECUZIONE DEL PROGRAMMMA  
+        */
         public void aggiorna()
         {
             string filePath = Path.Combine("saves", "Salvati.json");
@@ -79,11 +86,13 @@ namespace Gestionale.Services
                     modificaUtente(utenteTrovato);
                     return 3;
                 }
+                //QUESTA PARTE PER ELIMINARE IL CLIENTE TROVATO
                 else if (cambio == false && elimino == true)
                 {
                     EliminaUtente(utenteTrovato);
                     return 4;
                 }
+                //QUESTO SEMPLICEMENTE PER METTERLO A SCHERMO, UNA LOGICA DA RIVEDERE ALLE VOLTE POTREBBE NON FUNZIONARE
                 else if ((cambio || elimino) == false && lettura == true)
                 {
                     Console.WriteLine("== UTENTE TROVATO CON SUCCESSO! ==");
@@ -105,6 +114,7 @@ namespace Gestionale.Services
             return 0;
         }
 
+        //FUNZIONE PER MODIFICARE I VALORI INTERNI DELL'UTENTE,PENSARE AD UN FUTURO AGGIORNAMENTO CON LA MODIFICA DETTAGLIATA IN BASE A COSA VUOI MODIFICARE
         public void modificaUtente(Utente utente)
         {
             Console.WriteLine("Siamo pronti per cambiare l'utente");
@@ -119,7 +129,7 @@ namespace Gestionale.Services
             utente.Email = nuovoEmail;
         }
 
-
+        //FUNZIONE BASE PER ELIMINARE L'UTENTE DELLA LISTA INVIATO ALLA FUNZIONE
         public void EliminaUtente(Utente utente)
         {
             if (utenti.Remove(utente))
