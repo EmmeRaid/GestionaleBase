@@ -11,6 +11,15 @@ namespace Gestionale.Services
         public void AggiungiUtente(int id, string nome, string email)
         {
             var nuovo = new Utente { Id = id, Nome = nome, Email = email };
+
+            Console.WriteLine("\n====================================");
+            Console.WriteLine("✅ Nuovo utente inserito correttamente!");
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine($"🆔 ID: {id}");
+            Console.WriteLine($"👤 Nome: {nome}");
+            Console.WriteLine($"📧 Email: {email}");
+            Console.WriteLine("====================================\n");
+
             utenti.Add(nuovo);
         }
 
