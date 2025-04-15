@@ -22,3 +22,12 @@ Permette di aggiungere, modificare, eliminare e visualizzare utenti, con la poss
 
    ```bash
    git clone https://github.com/EmmeRaid/GestionaleBase.git
+
+2. Startare il programma:
+
+   ```bash
+   dotnet run
+
+## 📸 Screenshot
+![Logo Gestionale](images/menu.png)
+![Logo Gestionale](images/output.png)
