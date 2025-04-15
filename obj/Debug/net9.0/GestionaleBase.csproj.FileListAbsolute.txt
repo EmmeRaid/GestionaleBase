@@ -1,0 +1,14 @@
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\bin\Debug\net9.0\GestionaleBase.exe
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\bin\Debug\net9.0\GestionaleBase.deps.json
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\bin\Debug\net9.0\GestionaleBase.runtimeconfig.json
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\bin\Debug\net9.0\GestionaleBase.dll
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\bin\Debug\net9.0\GestionaleBase.pdb
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.AssemblyInfoInputs.cache
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.AssemblyInfo.cs
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.csproj.CoreCompileInputs.cache
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.dll
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\refint\GestionaleBase.dll
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.pdb
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\GestionaleBase.genruntimeconfig.cache
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GestionaleBase\obj\Debug\net9.0\ref\GestionaleBase.dll
