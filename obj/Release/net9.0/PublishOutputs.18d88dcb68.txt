@@ -1,0 +1,5 @@
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\publish\GestionaleBase.exe
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\publish\GestionaleBase.dll
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\publish\GestionaleBase.deps.json
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\publish\GestionaleBase.runtimeconfig.json
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\publish\GestionaleBase.pdb

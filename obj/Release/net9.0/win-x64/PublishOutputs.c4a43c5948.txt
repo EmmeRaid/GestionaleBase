@@ -1,0 +1,2 @@
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\win-x64\publish\GestionaleBase.pdb
+C:\Users\bello\OneDrive\Desktop\UNIVERSITA'\PROGRAMMAZIONE\C#\GEstionaleBase\GestionaleBase-main\bin\Release\net9.0\win-x64\publish\GestionaleBase.exe
