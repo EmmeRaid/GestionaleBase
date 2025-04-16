@@ -40,7 +40,7 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
             bool cambio = false;
             //LEGGO DA TEMRMINALE I DATI PER INSERIRLI ALL'INTERNO DELLA LISTA UTENTI
             Console.WriteLine("➡️  ID (numero intero)");
-            int id = int.Parse(Console.ReadLine());
+            int id = int.Parse(Console.ReadLine()!);
 
             Console.WriteLine("➡️  Nome completo (es. Mario Rossi)");
             string? nome = Console.ReadLine();
@@ -73,23 +73,32 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
         FUNZIONE PER AGGIORNARE ALL'AVVIO DEL PROGRAMMA LA LISTA CON IL FILE JSON 
         CHE SUCCESSIVAMENTE VERRà AGGIORNATO CON ALTRI DATI DURANTE L'ESECUZIONE DEL PROGRAMMMA  
         */
-        public void aggiorna()
+public void aggiorna()
+{
+    string filePath = Path.Combine("saves", "Salvati.json");
+
+    if (File.Exists(filePath))
+    {
+        try
         {
-            string filePath = Path.Combine("saves", "Salvati.json");
+            string json = File.ReadAllText(filePath);
+            var utentiDeserializzati = JsonSerializer.Deserialize<List<Utente>>(json);
 
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-
-                utenti = JsonSerializer.Deserialize<List<Utente>>(json);
-
-                Console.WriteLine("✅Lista utenti caricata con successo:");
-            }
-            else
-            {
-                Console.WriteLine($"File non trovato: {filePath}");
-            }
+            utenti = utentiDeserializzati ?? new List<Utente>();
+            Console.WriteLine("✅ Lista utenti caricata con successo:");
         }
+        catch (Exception ex)
+        {
+            utenti = new List<Utente>();
+            Console.WriteLine($"❌ Errore nella lettura del file JSON: {ex.Message}");
+        }
+    }
+    else
+    {
+        utenti = new List<Utente>();
+        Console.WriteLine($"⚠️ File non trovato: {filePath}. Creata lista vuota.");
+    }
+}
 
 
         //QUESTA FUNZIONE HA DUE POSSIBILE STRADE IN BASE AL VALORE BOOLEANO ASSEGNATO ALL'INTERNO DEL MAIN
@@ -139,7 +148,7 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
         {
             Console.WriteLine("Siamo pronti per cambiare l'utente");
             Console.WriteLine("➡️  ID (numero intero)");
-            int nuovoId = int.Parse(Console.ReadLine());
+            int nuovoId = int.Parse(Console.ReadLine()!);
             Console.WriteLine("➡️  Nome completo (es. Mario Rossi)");
             string? nuovoNome = Console.ReadLine();
             Console.WriteLine("➡️  Email (es. mario@email.it)");
