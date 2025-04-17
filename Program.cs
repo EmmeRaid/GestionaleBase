@@ -1,6 +1,4 @@
-﻿using Gestionale.Models;
-using Gestionale.Services;
-using System;
+﻿using Gestionale.Services;
 
 
 
@@ -9,10 +7,10 @@ class Program
     static void Main()
     {
         var utenteService = new UtenteService();
-        bool cambio = false;
-        bool elimino = false;
+        bool cambio;
+        bool elimino;
         bool lettura = false;
-        int id = 0;
+        int id;
         int Selezione_funzione = 0;
 
         utenteService.StampaLogo();

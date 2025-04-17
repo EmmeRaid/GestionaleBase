@@ -1,11 +1,6 @@
-using System.Runtime.InteropServices;
 using Gestionale.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.Json;
-using System.Net.Mail;
-using System.Globalization;
+using Mail.Checker;
 
 namespace Gestionale.Services
 {
@@ -58,7 +53,7 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
             string? email = Console.ReadLine();
 
             //LOOP PER CONTROLLARE LA FORMATTAZIONE DELLA MAIL
-            while (IsCorrectMail(email) == false)
+            while (MailService.IsCorrectMail(email) == false)
             {
                 email = Console.ReadLine();
             }
@@ -236,28 +231,6 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
             }
         }
 
-        //CONTROLLO DELLA VALIDITà DELL'EMAIL TRAMITE LIBRERIA ESISTENTE 
-        public bool IsCorrectMail(string email)
-        {
-            try
-            {
-                var addr = new MailAddress(email);
-                int lunghezza = email.Length;
-                Console.WriteLine(lunghezza);
-                for(int i = 0; i< lunghezza ;i++){
-                    if(email[i] == '@'){
-                        
-                    }
-                }
-                return addr.Address == email;
-            }
-            catch
-            {
-                Console.WriteLine("❌Errore: L'Email utilizzata non è formattata correttamente");
-                return false;
-            }
-        }
-
 
         public List<Utente> GetUtenti()
         {
@@ -291,4 +264,8 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
             Console.Write("Scegli un'opzione: ");
         }
     }
+
+
+
+
 }
