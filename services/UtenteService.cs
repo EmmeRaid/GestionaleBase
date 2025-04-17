@@ -4,11 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Net.Mail;
+using System.Globalization;
 
 namespace Gestionale.Services
 {
     public class UtenteService
     {
+
+
 
         public void StampaLogo()
         {
@@ -42,20 +46,41 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
             Console.WriteLine("➡️  ID (numero intero)");
             int id = int.Parse(Console.ReadLine()!);
 
-            Console.WriteLine("➡️  Nome completo (es. Mario Rossi)");
-            string? nome = Console.ReadLine();
+
+            //LOOP PER CONTROLLARE LA DISPONIBILITA DELL'ID
+            while (TrovaUtente(id, cambio, elimino, lettura) == 1)
+            {
+                Console.WriteLine("❌Mi dispiace l'utente inserito non può essere salvato, l'ID selezionato è gia esistente.");
+                id = int.Parse(Console.ReadLine()!);
+            }
+
             Console.WriteLine("➡️  Email (es. mario@email.it)");
             string? email = Console.ReadLine();
 
+            //LOOP PER CONTROLLARE LA FORMATTAZIONE DELLA MAIL
+            while (IsCorrectMail(email) == false)
+            {
+                email = Console.ReadLine();
+            }
+
+            Console.WriteLine("➡️  Nome completo (es. Mario Rossi)");
+            string? nome = Console.ReadLine();
+
+
             var nuovo = new Utente { Id = id, Nome = nome, Email = email };
+
+
 
             //CONTROLLO SE L'UTENTE è GIA STATO SALVATO CON LO STESSO ID
             if (TrovaUtente(nuovo.Id, cambio, elimino, lettura) == 1)
             {
                 Console.WriteLine("❌Mi dispiace l'utente inserito non può essere salvato, l'ID selezionato è gia esistente.");
+
             }
             else
             {
+                //CONTROLLO IN LOOP DELLA MAIL FINCHE NON è FOMRATTATA CORRETTAMENTE;
+
                 Console.WriteLine("\n====================================");
                 Console.WriteLine("✅ Nuovo utente inserito correttamente!");
                 Console.WriteLine("------------------------------------");
@@ -73,32 +98,32 @@ _  / __ _  _ \_  ___/  __/_  /_  __ \_  __ \  __ `/_  /_  _ \
         FUNZIONE PER AGGIORNARE ALL'AVVIO DEL PROGRAMMA LA LISTA CON IL FILE JSON 
         CHE SUCCESSIVAMENTE VERRà AGGIORNATO CON ALTRI DATI DURANTE L'ESECUZIONE DEL PROGRAMMMA  
         */
-public void aggiorna()
-{
-    string filePath = Path.Combine("saves", "Salvati.json");
-
-    if (File.Exists(filePath))
-    {
-        try
+        public void aggiorna()
         {
-            string json = File.ReadAllText(filePath);
-            var utentiDeserializzati = JsonSerializer.Deserialize<List<Utente>>(json);
+            string filePath = Path.Combine("saves", "Salvati.json");
 
-            utenti = utentiDeserializzati ?? new List<Utente>();
-            Console.WriteLine("✅ Lista utenti caricata con successo:");
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    string json = File.ReadAllText(filePath);
+                    var utentiDeserializzati = JsonSerializer.Deserialize<List<Utente>>(json);
+
+                    utenti = utentiDeserializzati ?? new List<Utente>();
+                    Console.WriteLine("✅ Lista utenti caricata con successo:");
+                }
+                catch (Exception ex)
+                {
+                    utenti = new List<Utente>();
+                    Console.WriteLine($"❌ Errore nella lettura del file JSON: {ex.Message}");
+                }
+            }
+            else
+            {
+                utenti = new List<Utente>();
+                Console.WriteLine($"⚠️ File non trovato: {filePath}. Creata lista vuota.");
+            }
         }
-        catch (Exception ex)
-        {
-            utenti = new List<Utente>();
-            Console.WriteLine($"❌ Errore nella lettura del file JSON: {ex.Message}");
-        }
-    }
-    else
-    {
-        utenti = new List<Utente>();
-        Console.WriteLine($"⚠️ File non trovato: {filePath}. Creata lista vuota.");
-    }
-}
 
 
         //QUESTA FUNZIONE HA DUE POSSIBILE STRADE IN BASE AL VALORE BOOLEANO ASSEGNATO ALL'INTERNO DEL MAIN
@@ -136,7 +161,7 @@ public void aggiorna()
             }
             else
             {
-                Console.WriteLine("== UTENTE NON TROVATO! ==");
+                Console.WriteLine("==✅ ID DISPONIBILE! ==");
             }
             elimino = false;
             cambio = false;
@@ -211,7 +236,27 @@ public void aggiorna()
             }
         }
 
-
+        //CONTROLLO DELLA VALIDITà DELL'EMAIL TRAMITE LIBRERIA ESISTENTE 
+        public bool IsCorrectMail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                int lunghezza = email.Length;
+                Console.WriteLine(lunghezza);
+                for(int i = 0; i< lunghezza ;i++){
+                    if(email[i] == '@'){
+                        
+                    }
+                }
+                return addr.Address == email;
+            }
+            catch
+            {
+                Console.WriteLine("❌Errore: L'Email utilizzata non è formattata correttamente");
+                return false;
+            }
+        }
 
 
         public List<Utente> GetUtenti()

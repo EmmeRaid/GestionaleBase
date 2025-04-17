@@ -14,7 +14,7 @@ class Program
         bool lettura = false;
         int id = 0;
         int Selezione_funzione = 0;
-        
+
         utenteService.StampaLogo();
         utenteService.aggiorna();
         //LOOP DEL PROGRAMA CHE VA A FINIRE UNA VOLTA CHE L'AMMINISTRATORE INSERISCE IL NUMERO "6"
@@ -39,27 +39,18 @@ class Program
                     //MOSTRO A SCHERMO LE INFORMAZIONI CORRETTE PER INSERIRE I DATI 
                     utenteService.Info_inserimento();
 
-                    //AGGIUNGO LE INFORMAZIONI INSERITE PRECEDENTEMENTE ALL'INTERNO DELLA LISTA UTENTI
-                    utenteService.AggiungiUtente();
-
                     //AVVIAMO UN PROCEDIMENTO IN CASO AMMINISTRATORE VOLESSE AGGIUNGERE ALTRI UTENTI
                     Console.WriteLine("\n====================================");
-                    Console.WriteLine("\n=VUOI AGGIUNGERE ALTRI UTENTI ?(Y/N)=");
-                    string? scelta = Console.ReadLine();
+                    Console.WriteLine("\n=QUANTI UTENTI VORRESTI AGGIUNGERE?=");
+                    int numero = int.Parse(Console.ReadLine());
 
-                    //QUI L'AMMINISTRATORE SCEGLIE SE VUOLE CONTNINUARE AD AGGIUNGERE 
-                    if (scelta == "y" || scelta == "Y")
+                    //UN LOOP CHE VA AD AGGIUNGERE QUANTI UTENTI TANTO IL NUMERO SELEZIONATO NELLA VARIABILE NUMERO
+                    for (int i = 0; i < numero; i++)
                     {
-                        Console.WriteLine("Quanti utenti vorresti aggiungere?");
-                        int numero = int.Parse(Console.ReadLine()!);
-
-                        //UN LOOP CHE VA AD AGGIUNGERE QUANTI UTENTI TANTO IL NUMERO SELEZIONATO NELLA VARIABILE NUMERO
-                        for (int i = 0; i < numero; i++)
-                        {
-                            utenteService.Info_inserimento();
-                            utenteService.AggiungiUtente();
-                        }
+                        utenteService.Info_inserimento();
+                        utenteService.AggiungiUtente();
                     }
+
                     break;
 
                 //ELIMINA UTENTE
@@ -77,7 +68,7 @@ class Program
                     id = int.Parse(Console.ReadLine());
                     cambio = true;
                     elimino = false;
-                    utenteService.TrovaUtente(id, cambio, elimino,lettura);
+                    utenteService.TrovaUtente(id, cambio, elimino, lettura);
                     break;
 
                 //VISUALIZZA LA LISTA COMPLETA DEGLI UTENTI
@@ -94,7 +85,7 @@ class Program
                     cambio = false;
                     elimino = false;
                     lettura = true;
-                    utenteService.TrovaUtente(id, cambio, elimino,lettura);
+                    utenteService.TrovaUtente(id, cambio, elimino, lettura);
                     break;
             }
 
